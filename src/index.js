@@ -33,7 +33,7 @@ app.use('/test', (req, res) => {
 
 
 //Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI).then(() => console.log("connect to MomgoDB Atlas")).catch(err => console.log(err));
+mongoose.connect(process.env.MONGO_URI).then(() => console.log("!connect to MomgoDB Atlas")).catch(err => console.log(err));
 
 
 
