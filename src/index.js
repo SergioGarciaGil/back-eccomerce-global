@@ -58,7 +58,7 @@ app.use(cors(corsConfig));
 
 
 // require('./models/usergoogle');
-require('./Passport/passport.js');
+// require('./Passport/passport.js');
 //const logintwet=require('./routes/logintwet');
 // const route=require('./routes');
 var SQLiteStore = require('connect-sqlite3')(session);
