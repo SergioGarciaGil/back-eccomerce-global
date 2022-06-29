@@ -24,13 +24,13 @@ module.exports = function (passport) {
       callbackURL: '/auth/twitter/callback'
    }, function (accessToken, refreshToken, profile, done) {
 
-      usergogle.findOne({ provider_id: profile.id }, funtion(error, user));
+      usergoogle.findOne({ provider_id: profile.id }, funtion(error, user));
 
       if (error) throw (error);
 
-      if (!error && usergogle != null) return done(null, user);
+      if (!error && usergoogle != null) return done(null, user);
 
-      let usernew = new usergogle({
+      let usernew = new usergoogle({
          provider_id: profile.id,
          provider: profile.provider,
          name: profile.displayName,
