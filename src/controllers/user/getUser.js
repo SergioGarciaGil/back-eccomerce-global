@@ -12,5 +12,9 @@ const getUsers = (req, res) => {
         });
 }
 
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 51d060088fcf51c41103bce252701db6ecd4b1ba
 module.exports = getUsers;

@@ -1,24 +1,25 @@
 
+
 const express = require('express');
-const midleware=require('../middleware/middleware')
+const midleware = require('../middleware/middleware')
 const routerUser = require('./routesUser');
 const userRouter = require('../controllers/user/loginUser')
 const router = express.Router();
-const paypalrouter = require ('./routesPayPal');
+const paypalrouter = require('./routesPayPal');
 const routesOrders = require('./routesOrders');
 const routerProducts = require('./routesProducts');
 
 
 
 // create user
-router.use('/users/',routerUser);
+router.use('/users/', routerUser);
 
 //const  routeGoogles  = require('../routes/routesGoogle.js');
 //middleware
 
 router.use('/auth/', userRouter);
 router.use('/paypal/', paypalrouter);
-router.use('/orders/',routesOrders)
+router.use('/orders/', routesOrders)
 
 // router.use('/authGoogle',passport.authenticate('auth-google',{
 //     scope:[
@@ -27,6 +28,16 @@ router.use('/orders/',routesOrders)
 //        ],
 //        session:false 
 // }),routeGoogles); 
+
+
+
+
+// create user
+router.use('/users', routerUser);
+
+router.use('/auth/', userRouter);
+
+router.use('/paypal/', paypalrouter);
 
 
 router.use('/products/', routerProducts);
