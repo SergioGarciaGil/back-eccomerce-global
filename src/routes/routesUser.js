@@ -43,7 +43,7 @@ router.post('/', resgisterUser);
 // check('address','la direccion es obligatoria').not().isEmpty(),
 // check('phoneNumber','el numero de telefono es obligatorio').not().isEmpty(),
 // ]      
-router.put('/:dni', updateUser);
+router.put('/:id', updateUser);
 router.delete('/delete/:dni', deleteUser);
 router.get('/users/login', createLogin);
 router.post('/users/login', loginUser);
