@@ -3,9 +3,10 @@ const router = express.Router();
 const createOrder = require('../controllers/orders/createOrder');
 const updateOrder = require('../controllers/orders/updateOrder');
 const deleteOrder = require('../controllers/orders/deleteOrder');
-const getOrderById= require("../controllers/orders/getOrderById")
-const getAllUserOrder= require("../controllers/orders/getAllUserOrder")
+const getOrderById = require("../controllers/orders/getOrderById")
+const getAllUserOrder = require("../controllers/orders/getAllUserOrder")
 const getAllOrders = require("../controllers/orders/getAllOrders");
+router.get("/getAllOrders/", getAllOrders);
 router.post("/", createOrder);
 
 router.put("/:id", updateOrder);
@@ -16,6 +17,6 @@ router.post("/getAll", getAllUserOrder);
 
 router.get("/:id", getOrderById);
 
-router.get("/getAllOrders/",getAllOrders);
+
 
 module.exports = router;

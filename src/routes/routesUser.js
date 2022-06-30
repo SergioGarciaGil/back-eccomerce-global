@@ -15,11 +15,12 @@ const upper = multer({ dest: 'controllers/user/createUser' })
 const logon = multer({ dest: 'controllers/user/loginUser' })
 const passport = require('passport');
 const validateToken = require('../controllers/user/validateToken');
+router.get('/user', getUser)
 //router.get('/', getUser);
 router.get('/:dni', getdUser);
 router.get('/name/:name', getNameUser);
 // se requier check de express-validator 
-router.get('/user', getUser)
+
 router.get('/', createUser);
 router.post('/', resgisterUser);
 //router.get('/registro',createUser);
