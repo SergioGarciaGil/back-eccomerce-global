@@ -15,8 +15,10 @@ const upper = multer({ dest: 'controllers/user/createUser' })
 const logon = multer({ dest: 'controllers/user/loginUser' })
 const passport = require('passport');
 const validateToken = require('../controllers/user/validateToken');
+const getByUsername = require('../controllers/user/getByUsername');
 router.get('/user', getUser)
 //router.get('/', getUser);
+router.post('/name', getByUsername)
 router.get('/:dni', getdUser);
 router.get('/name/:name', getNameUser);
 // se requier check de express-validator 
