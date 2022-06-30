@@ -11,6 +11,6 @@ const getUsers = (req, res) => {
             res.json({ message: err });
         });
 }
-
+//prueba
 
 module.exports = getUsers;
