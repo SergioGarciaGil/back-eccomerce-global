@@ -39,7 +39,7 @@ const respon = async (req, res, next) => {
     let age = req.body.age;
     let address = req.body.address;
     let phoneNumber = req.body.phoneNumber;
-    let role = "admin";
+    let role = "client";
     let token = createToken(userToken);
 
     let mailencontraddo = await userSchema.findOne({ email: email });
