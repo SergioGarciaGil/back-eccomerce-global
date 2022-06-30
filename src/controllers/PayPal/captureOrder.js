@@ -22,7 +22,7 @@ const captureOrder = async (req, res) => {
     );
 
 
-    res.redirect("http://localhost:3000/");
+    res.redirect("https://globalmarket.vercel.app/orders/history");
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({ message: "Internal Server error" });

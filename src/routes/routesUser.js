@@ -50,7 +50,7 @@ router.post('/users/login', loginUser);
 router.get('/profile', (req, res, next) => {
     res.render('profile');
 })
-router.get('/users/secure', validateToken)
+router.post('/users/secure', validateToken)
 
 
 

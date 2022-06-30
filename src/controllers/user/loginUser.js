@@ -20,39 +20,40 @@ const loginUser = async (req, res) => {
    }
 
 
-   //     if(!bcrypt.compareSync(password,user.password)){
-   //        alert("Password Incorrecta")
-   //        res.status(400);
-   //     }
-   //const igual=bcrypt.compareSync(password,user.password);
+   if (!bcrypt.compareSync(password, user.password)) {
+      alert("Password Incorrecta")
+      res.status(400);
+   }
+   const igual = bcrypt.compareSync(password, user.password);
 
    console.log(user)
    let role = user.role;
+   let tokenn = user.token
 
    let mailencontraddo = await userSchema.findOne({ email: email });
    let usernameexiste = await userSchema.findOne({ Username: Username });
    let passwexiste = await userSchema.findOne({ password: password });
+   console.log(passwexiste)
+   console.log(mailencontraddo)
    if (mailencontraddo) {
       console.log('email correcto ')
-      // console.log(igual);
+      console.log(igual);
 
-      //passwexiste=true;
+
       if (usernameexiste) {
          console.log('Username correto')
-         if (passwexiste) {
+         if (igual) {
 
 
             res.status(200).json({
-               token: createToken(user),
+               token: tokenn,
                user: {
                   email, role, Username
                }
-
-
             });
 
 
-            alert('Usuario Registrado');
+            ;
 
 
          } else {
@@ -71,20 +72,6 @@ const loginUser = async (req, res) => {
    };
 
 
-
-
-   function createToken(user) {   //creo el token
-      const token = jwt.sign(
-         {
-            Username: user.Username.toString(),
-            email: user.email.toString()
-         },
-         'clave secreta',
-         { expiresIn: '30d' }
-      )
-      return token
-
-   };
 
 
 

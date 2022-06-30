@@ -1,96 +1,69 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
+
   name: {
     type: String,
-    required: true,
+    required: true
+
   },
   surname: {
     type: String,
-    required: true,
+    required: true
+
   },
   Username: {
     type: String,
-    required: true,
+    required: true
+
   },
   password: {
     type: String,
-    required: true,
+    required: true
+
   },
 
   email: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
   },
   dni: {
     type: Number,
-    required: true,
+    required: true
+
   },
   age: {
     type: Number,
-    required: true,
+    required: true
+
   },
   address: {
     type: String,
-    required: true,
+    required: true
+
   },
   phoneNumber: {
     type: Number,
-    require: true,
+    require: true
   },
   role: {
     type: String,
     enum: {
-      values: ["admin", "client"],
-      message: "{values} no es un role válido",
-      default: "client",
-      required: true,
-    },
-    surname: {
-      type: String,
-      required: true,
-    },
-    Username: {
-      type: String,
-      required: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
+      values: ['admin', 'client'],
+      message: '{values} no es un role válido',
+      default: 'client',
+      required: true
+    }
 
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    dni: {
-      type: Number,
-      required: true,
-    },
-    age: {
-      type: Number,
-      required: true,
-    },
-    address: {
-      type: String,
-      required: true,
-    },
-    phoneNumber: {
-      type: Number,
-      require: true,
-    },
-    role: {
-      type: String,
-      enum: {
-        values: ["admin", "client"],
-        message: "{values} no es un role válido",
-        default: "client",
-        required: true,
-      },
-    },
   },
-});
-//prueba22
-module.exports = mongoose.model("User", userSchema);
+  token: {
+    type: String,
+    require: true
+  }
+
+})
+
+
+
+module.exports = mongoose.model('User', userSchema);
