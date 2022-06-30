@@ -24,4 +24,5 @@ const getProducts = (req, res) => {
             });
     }
 }
+//prueba
 module.exports = getProducts;
