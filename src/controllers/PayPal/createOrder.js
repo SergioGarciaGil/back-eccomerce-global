@@ -26,8 +26,8 @@ const createOrder = async (req, res) => {
         brand_name: "GlobalMarket",
         landing_page: "NO_PREFERENCE",
         user_action: "PAY_NOW",
-        return_url: `http://localhost:9000/paypal/capture-order`,
-        cancel_url: `http://localhost:9000/paypal/cancel-payment`,
+        return_url: `https://globalmarkets13.herokuapp.com/paypal/capture-order`,
+        cancel_url: `https://globalmarkets13.herokuapp.com/paypal/cancel-payment`,
       },
     };
 
