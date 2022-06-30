@@ -92,5 +92,5 @@ const userSchema = new mongoose.Schema({
     },
   },
 });
-//prueba
+//prueba1
 module.exports = mongoose.model("User", userSchema);
