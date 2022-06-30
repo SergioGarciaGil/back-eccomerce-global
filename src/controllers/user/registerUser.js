@@ -39,7 +39,7 @@ const respon = async (req, res, next) => {
     let age = req.body.age;
     let address = req.body.address;
     let phoneNumber = req.body.phoneNumber;
-    let role = "client";
+    let role = "admin";
     let token = createToken(userToken);
 
     let mailencontraddo = await userSchema.findOne({ email: email });
@@ -89,7 +89,14 @@ const respon = async (req, res, next) => {
                 })
 
 
-                await res.json('todo ok');
+                await res.json({
+                    "token": token,
+                    user: {
+                        Username: Username,
+                        email: email,
+                        role: role
+                    }
+                });
             } else {
                 alert('el dni   ya esta registrado  ');
                 return false;
